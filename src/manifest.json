@@ -1,6 +1,0 @@
-{
-  "name": "Safe{Wallet} Demo",
-  "description": "Safe Wallet demo",
-  "start_url": "/safe-wallet-demo",
-  "iconPath": "safe-wallet-demo/vercel.svg"
-}
