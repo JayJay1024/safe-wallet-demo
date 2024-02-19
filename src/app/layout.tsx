@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Safe{Wallet} Demo",
   description: "Safe Wallet demo",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
