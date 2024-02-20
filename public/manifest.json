@@ -1,5 +1,5 @@
 {
   "name": "Safe{Wallet} Demo",
   "description": "Safe Wallet demo",
-  "iconPath": "vercel.svg"
+  "icons": [{ "src": "vercel.svg", "sizes": "any" }]
 }
