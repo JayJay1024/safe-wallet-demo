@@ -1,3 +1,5 @@
+"use client";
+
 import Navigation from "@/components/navigation";
 import { Container } from "@mui/material";
 import { ConnectButton } from "@rainbow-me/rainbowkit";

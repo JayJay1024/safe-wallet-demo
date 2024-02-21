@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
-import theme from "../theme";
-import { CssBaseline } from "@mui/material";
 import RainbowProvider from "@/providers/rainbow-provider";
+import MuiProvider from "@/providers/mui-provider";
 
 export const metadata: Metadata = {
   title: "Safe{Wallet} Demo",
@@ -21,14 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={theme}>
-              <CssBaseline />
-              <RainbowProvider>{children}</RainbowProvider>
-            </ThemeProvider>
-          </StyledEngineProvider>
-        </AppRouterCacheProvider>
+        <MuiProvider>
+          <RainbowProvider>{children}</RainbowProvider>
+        </MuiProvider>
       </body>
     </html>
   );
