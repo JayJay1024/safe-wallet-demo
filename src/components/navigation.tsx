@@ -7,6 +7,7 @@ export default function Navigation() {
       <Link href="/">Home</Link>
       <Link href="/mui">Mui</Link>
       <Link href="/rainbow">Rainbow</Link>
+      <Link href="/safe">Safe</Link>
     </Stack>
   );
 }
