@@ -5,6 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
 import theme from "../theme";
 import { CssBaseline } from "@mui/material";
+import RainbowProvider from "@/providers/rainbow-provider";
 
 export const metadata: Metadata = {
   title: "Safe{Wallet} Demo",
@@ -24,7 +25,7 @@ export default function RootLayout({
           <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
               <CssBaseline />
-              {children}
+              <RainbowProvider>{children}</RainbowProvider>
             </ThemeProvider>
           </StyledEngineProvider>
         </AppRouterCacheProvider>
