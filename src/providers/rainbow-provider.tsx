@@ -7,7 +7,30 @@ import { mainnet, polygon, optimism, arbitrum, base, zora, sepolia } from "wagmi
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { PropsWithChildren } from "react";
 import { metaMaskWallet, rainbowWallet, safeWallet, walletConnectWallet } from "@rainbow-me/rainbowkit/wallets";
-import { createClient, http } from "viem";
+import { Chain, createClient, http } from "viem";
+
+const darwinia: Chain = {
+  id: 46,
+  name: "Darwinia",
+  nativeCurrency: { name: "RING", symbol: "RING", decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.darwinia.network"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Subscan",
+      url: "https://darwinia.subscan.io",
+    },
+  },
+  contracts: {
+    multicall3: {
+      address: "0xcA11bde05977b3631167028862bE2a173976CA11",
+      blockCreated: 251739,
+    },
+  },
+};
 
 const appName = "Safe{Wallet} Demo";
 const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_ID || "";
@@ -19,7 +42,7 @@ const connectors = connectorsForWallets(
 );
 const config = createConfig({
   connectors,
-  chains: [mainnet, polygon, optimism, arbitrum, base, zora, sepolia],
+  chains: [mainnet, polygon, optimism, arbitrum, base, zora, sepolia, darwinia],
   client: ({ chain }) => createClient({ chain, transport: http() }),
 });
 
